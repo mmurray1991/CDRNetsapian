@@ -1,0 +1,10 @@
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
+c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
