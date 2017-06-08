@@ -57,6 +57,9 @@ namespace CDRNetsapian
             var json = JObject.Parse(content);
             string x = json.ToObject<string>();
             return x;
+=======
+            return content;
+>>>>>>> a1a664799bc3ba028fb977c720ae63f053ba5da7
         }
 
         public class CDRList
