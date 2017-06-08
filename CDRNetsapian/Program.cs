@@ -45,6 +45,7 @@ namespace CDRNetsapian
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
+<<<<<<< HEAD
             JArray ja = JArray.Parse(content);
             Console.Write(ja[0].ToString(Newtonsoft.Json.Formatting.Indented));
             JToken jt = JToken.Parse(content);
