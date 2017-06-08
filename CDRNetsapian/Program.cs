@@ -45,9 +45,7 @@ namespace CDRNetsapian
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
-            var json = JObject.Parse(content);
-            string x = json.ToObject<string>();
-            return x;
+            return content;
         }
        
     }
