@@ -8,3 +8,13 @@ c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\ob
 c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
 c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
 c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache

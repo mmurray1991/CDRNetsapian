@@ -45,10 +45,30 @@ namespace CDRNetsapian
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
+            JArray ja = JArray.Parse(content);
+            Console.Write(ja[0].ToString(Newtonsoft.Json.Formatting.Indented));
+            JToken jt = JToken.Parse(content);
+            string formatted = jt.ToString(Newtonsoft.Json.Formatting.Indented);
+            Console.Write(formatted);
+            JArray array = (JArray)response.Content;
+            dynamic stuff = JRaw.Parse(response.Content);
+
+           // object answer =JObject.
             var json = JObject.Parse(content);
             string x = json.ToObject<string>();
             return x;
         }
-       
+
+        public class CDRList
+        {
+            public List<CDRContainer> cdr { get; set; }
+        }
+
+        public class CDRContainer
+        {
+
+        }
+
+
     }
 }
