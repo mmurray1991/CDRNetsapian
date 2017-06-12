@@ -16,7 +16,7 @@ namespace CDRNetsapian
         static void Main(string[] args)
         {
             string accessToken = requestAccessToken();
-            var cdr = getCDR(accessToken);
+            JArray cdr = getCDR(accessToken);
             Console.Write(cdr);
 
         }
@@ -36,7 +36,7 @@ namespace CDRNetsapian
             string token = json["access_token"].ToObject<string>();
             return token;
         }
-        public static string getCDR(string act)
+        public static JArray getCDR(string act)
         {
             var client = new RestClient("https://portal.trueipsolutions.com/ns-api/?format=json&object=cdr&action=read");
             var request = new RestRequest("", Method.POST);
@@ -45,9 +45,10 @@ namespace CDRNetsapian
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
-<<<<<<< HEAD
+
             JArray ja = JArray.Parse(content);
-            Console.Write(ja[0].ToString(Newtonsoft.Json.Formatting.Indented));
+            return ja;
+            /*Console.Write(ja[0].ToString(Newtonsoft.Json.Formatting.Indented));
             JToken jt = JToken.Parse(content);
             string formatted = jt.ToString(Newtonsoft.Json.Formatting.Indented);
             Console.Write(formatted);
@@ -58,9 +59,8 @@ namespace CDRNetsapian
             var json = JObject.Parse(content);
             string x = json.ToObject<string>();
             return x;
-=======
-            return content;
->>>>>>> a1a664799bc3ba028fb977c720ae63f053ba5da7
+
+            return content;*/
         }
 
         public class CDRList
