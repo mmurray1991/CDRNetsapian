@@ -25,6 +25,8 @@ namespace CDRNetsapian
                 "User Id=Matt;"+
                 "Password=tips;";
             conn.Open();
+            CallReportingEntities cr = new CallReportingEntities();
+            CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
             string accessToken = requestAccessToken();
             JArray cdr = getCDR(accessToken);
             var testing = cdr[0]["term_callid"];
