@@ -7,6 +7,9 @@ using RestSharp;
 using System.Web;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace CDRNetsapian
 {
@@ -15,9 +18,19 @@ namespace CDRNetsapian
         
         static void Main(string[] args)
         {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = 
+                "Data Source=TIPS-6Z6GYN1;"+
+                "Initial Catalog=CallReporting;"+
+                "User Id=Matt;"+
+                "Password=tips;";
+            conn.Open();
             string accessToken = requestAccessToken();
             JArray cdr = getCDR(accessToken);
             var testing = cdr[0]["term_callid"];
+            
+                // using the code here...
+            
             Console.Write(cdr);
 
         }
