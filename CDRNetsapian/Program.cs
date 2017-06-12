@@ -17,6 +17,7 @@ namespace CDRNetsapian
         {
             string accessToken = requestAccessToken();
             JArray cdr = getCDR(accessToken);
+            var testing = cdr[0]["term_callid"];
             Console.Write(cdr);
 
         }
