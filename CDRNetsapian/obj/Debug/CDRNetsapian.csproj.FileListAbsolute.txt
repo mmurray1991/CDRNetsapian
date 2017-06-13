@@ -40,3 +40,17 @@ C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFram
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.xml
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.xml
 >>>>>>> d3fb97924f2b32101401204d77c2a1304c223568
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.dll
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.xml
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
+C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache

@@ -76,9 +76,10 @@ namespace CDRNetsapian
 
         public static void AddToDB(JArray cdrData)
         {
-            for(int x = 0; x< cdrData.Count; x++)
+            CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+            for (int x = 0; x< cdrData.Count; x++)
             {
-                CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+                
                 crm.Dialed__ = "123";
                 crm.Dialed__ = cdrData[x]["orig_to_user"].ToString();
                 crm.From_Device = cdrData[x]["orig_from_uri"].ToString();
