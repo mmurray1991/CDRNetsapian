@@ -15,35 +15,20 @@ namespace CDRNetsapian
 {
     class Program
     {
-        private CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+        //private static 
+        private static CallReportingEntities cr = new CallReportingEntities();
         static void Main(string[] args)
         {
             string accessToken = requestAccessToken();
             JArray cdr = getCDR(accessToken);
             var testing = cdr[0]["term_callid"];
-            Console.Write(cdr);
-            SqlConnection conn = new SqlConnection();
-            /*conn.ConnectionString = 
-                "Data Source=TIPS-6Z6GYN1;"+
-                "Initial Catalog=CallReporting;"+
-                "User Id=Matt;"+
-                "Password=tips;";
-            conn.Open();*/
-            CallReportingEntities cr = new CallReportingEntities();
-<<<<<<< HEAD
-
-            string accessToken = requestAccessToken();
-            JArray cdr = getCDR(accessToken);
+            //Console.Write(cdr);
             
+            AddToDB(cdr);
 
-                // using the code here...
-            
+            // using the code here...
+
             Console.Write(cdr);
-=======
-            CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
-
->>>>>>> d3fb97924f2b32101401204d77c2a1304c223568
-
         }
         public static string requestAccessToken()
         {
@@ -93,8 +78,44 @@ namespace CDRNetsapian
         {
             for(int x = 0; x< cdrData.Count; x++)
             {
-                break;
+                CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+                crm.Dialed__ = "123";
+                crm.Dialed__ = cdrData[x]["orig_to_user"].ToString();
+                crm.From_Device = cdrData[x]["orig_from_uri"].ToString();
+                crm.Orig_Call_ID = cdrData[x]["orig_callid"].ToString();
+                crm.From_User = cdrData[x]["orig_domain"].ToString();
+                crm.To_Device = cdrData[x]["term_to_uri"].ToString();
+                crm.To_User = cdrData[x]["domain"].ToString();
+                crm.Call_Time = cdrData[x]["batch_tim_beg"].ToString();
+                crm.Ringing_Time = "";
+                crm.Answer_Time = cdrData[x]["time_answer"].ToString();
+                crm.Hangup_Time = cdrData[x]["time_release"].ToString();
+
+                if (crm.Answer_Time == "" || crm.Answer_Time == "0000-00-00 00:00:00")
+                {
+                    crm.Talking_Time = 0;
+                    crm.Pre_Talk_Time = "";
+                } else {
+                    DateTime aTDate = Convert.ToDateTime(crm.Answer_Time);
+                    DateTime hTDate = Convert.ToDateTime(crm.Hangup_Time);
+                    int talk_Ti = Convert.ToInt16((hTDate - aTDate).TotalSeconds);
+                    crm.Talking_Time = talk_Ti;
+
+                    DateTime batchTimeBeg = Convert.ToDateTime(crm.Call_Time);
+                    crm.Pre_Talk_Time = (aTDate - batchTimeBeg).TotalSeconds.ToString();
+                }
+
+                crm.Hold_Time = 0;
+                crm.Duration__Sec_ = crm.Talking_Time;
+                crm.ACW = 0;
+                crm.Release_Reason = cdrData[x]["release_text"].ToString();
+                crm.Disposition = cdrData[x]["disposition"].ToString();
+                crm.Reason = cdrData[x]["reason"].ToString();
+                Console.WriteLine(x);
+                cr.CALL_RECORDS_MASTER.Add(crm);
+                
             }
+            cr.SaveChanges();
         }
 
         public class CDRList
