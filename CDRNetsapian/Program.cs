@@ -18,6 +18,10 @@ namespace CDRNetsapian
         private CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
         static void Main(string[] args)
         {
+            string accessToken = requestAccessToken();
+            JArray cdr = getCDR(accessToken);
+            var testing = cdr[0]["term_callid"];
+            Console.Write(cdr);
             SqlConnection conn = new SqlConnection();
             /*conn.ConnectionString = 
                 "Data Source=TIPS-6Z6GYN1;"+
@@ -26,6 +30,7 @@ namespace CDRNetsapian
                 "Password=tips;";
             conn.Open();*/
             CallReportingEntities cr = new CallReportingEntities();
+<<<<<<< HEAD
 
             string accessToken = requestAccessToken();
             JArray cdr = getCDR(accessToken);
@@ -34,6 +39,10 @@ namespace CDRNetsapian
                 // using the code here...
             
             Console.Write(cdr);
+=======
+            CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+
+>>>>>>> d3fb97924f2b32101401204d77c2a1304c223568
 
         }
         public static string requestAccessToken()
@@ -58,6 +67,7 @@ namespace CDRNetsapian
             var request = new RestRequest("", Method.POST);
             request.AddHeader("Authorization", "Bearer " + act);
             request.AddParameter("domain", "doubleradius.com");
+            request.AddParameter("type", "OutBound");
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
