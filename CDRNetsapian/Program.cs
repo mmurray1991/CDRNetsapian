@@ -15,22 +15,22 @@ namespace CDRNetsapian
 {
     class Program
     {
-        
+        private CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
         static void Main(string[] args)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = 
+            /*conn.ConnectionString = 
                 "Data Source=TIPS-6Z6GYN1;"+
                 "Initial Catalog=CallReporting;"+
                 "User Id=Matt;"+
                 "Password=tips;";
-            conn.Open();
+            conn.Open();*/
             CallReportingEntities cr = new CallReportingEntities();
-            CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+
             string accessToken = requestAccessToken();
             JArray cdr = getCDR(accessToken);
-            var testing = cdr[0]["term_callid"];
             
+
                 // using the code here...
             
             Console.Write(cdr);
@@ -77,6 +77,14 @@ namespace CDRNetsapian
             return x;
 
             return content;*/
+        }
+
+        public static void AddToDB(JArray cdrData)
+        {
+            for(int x = 0; x< cdrData.Count; x++)
+            {
+                break;
+            }
         }
 
         public class CDRList
