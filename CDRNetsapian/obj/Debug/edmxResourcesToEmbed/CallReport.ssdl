@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallReportingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CallReporting.dbo.CALL_RECORDS_MASTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CALL_RECORDS_MASTER">
+    <Key>
+      <PropertyRef Name="From Device" />
+      <PropertyRef Name="Orig Call-ID" />
+      <PropertyRef Name="To Device" />
+      <PropertyRef Name="Call Time" />
+      <PropertyRef Name="Hangup Time" />
+      <PropertyRef Name="Release Reason" />
+    </Key>
+    <Property Name="Dialed #" Type="varchar" MaxLength="50" />
+    <Property Name="From Device" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Orig Call-ID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="From User" Type="varchar" MaxLength="100" />
+    <Property Name="To Device" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="To User" Type="varchar" MaxLength="100" />
+    <Property Name="Call Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Ringing Time" Type="varchar" MaxLength="25" />
+    <Property Name="Answer Time" Type="varchar" MaxLength="25" />
+    <Property Name="Hangup Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Talking Time" Type="int" />
+    <Property Name="Hold Time" Type="int" />
+    <Property Name="Duration (Sec)" Type="int" />
+    <Property Name="ACW" Type="int" />
+    <Property Name="Pre-Talk Time" Type="varchar" MaxLength="25" />
+    <Property Name="Release Reason" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Disposition" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CallReporting.dbo.CALL_RECORDS_STAGING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CALL_RECORDS_STAGING">
+    <Key>
+      <PropertyRef Name="From Device" />
+      <PropertyRef Name="Orig Call-ID" />
+      <PropertyRef Name="To Device" />
+      <PropertyRef Name="Call Time" />
+      <PropertyRef Name="Hangup Time" />
+      <PropertyRef Name="Release Reason" />
+    </Key>
+    <Property Name="Dialed #" Type="varchar" MaxLength="50" />
+    <Property Name="From Device" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Orig Call-ID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="From User" Type="varchar" MaxLength="100" />
+    <Property Name="To Device" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="To User" Type="varchar" MaxLength="100" />
+    <Property Name="Call Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Ringing Time" Type="varchar" MaxLength="25" />
+    <Property Name="Answer Time" Type="varchar" MaxLength="25" />
+    <Property Name="Hangup Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Talking Time" Type="int" />
+    <Property Name="Hold Time" Type="int" />
+    <Property Name="Duration (Sec)" Type="int" />
+    <Property Name="ACW" Type="int" />
+    <Property Name="Pre-Talk Time" Type="varchar" MaxLength="25" />
+    <Property Name="Release Reason" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Disposition" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PROCESSING_STATUS">
+    <Key>
+      <PropertyRef Name="START_DATE" />
+    </Key>
+    <Property Name="START_DATE" Type="datetime" Nullable="false" />
+    <Property Name="FILE_NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="STATUS" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="END_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CallReporting.dbo.SYSTEM_CONFIG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SYSTEM_CONFIG">
+          <Property Name="FILE_PATH" Type="varchar" MaxLength="100" />
+          <Property Name="FOLDER_NAME" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="test">
+          <Property Name="Dialed #" Type="varbinary" MaxLength="50" />
+          <Property Name="From Device" Type="varchar" MaxLength="100" />
+          <Property Name="Orig Call-ID" Type="varchar" MaxLength="100" />
+          <Property Name="From User" Type="varchar" MaxLength="100" />
+          <Property Name="To Device" Type="varchar" MaxLength="100" />
+          <Property Name="To User" Type="varchar" MaxLength="100" />
+          <Property Name="Call Time" Type="varchar" MaxLength="25" />
+          <Property Name="Ringing Time" Type="varchar" MaxLength="25" />
+          <Property Name="Answer Time" Type="varchar" MaxLength="25" />
+          <Property Name="Hangup Time" Type="varchar" MaxLength="25" />
+          <Property Name="Talking Time" Type="int" />
+          <Property Name="Hold Time" Type="int" />
+          <Property Name="Duration (Sec)" Type="int" />
+          <Property Name="ACW" Type="int" />
+          <Property Name="Pre-Talk Time" Type="varchar" MaxLength="25" />
+          <Property Name="Release Reason" Type="varchar" MaxLength="100" />
+          <Property Name="Disposition" Type="varchar" MaxLength="50" />
+          <Property Name="Reason" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityContainer Name="CallReportingModelStoreContainer">
+    <EntitySet Name="PROCESSING_STATUS" EntityType="Self.PROCESSING_STATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CALL_RECORDS_MASTER].[Dialed #] AS [Dialed #], 
+    [CALL_RECORDS_MASTER].[From Device] AS [From Device], 
+    [CALL_RECORDS_MASTER].[Orig Call-ID] AS [Orig Call-ID], 
+    [CALL_RECORDS_MASTER].[From User] AS [From User], 
+    [CALL_RECORDS_MASTER].[To Device] AS [To Device], 
+    [CALL_RECORDS_MASTER].[To User] AS [To User], 
+    [CALL_RECORDS_MASTER].[Call Time] AS [Call Time], 
+    [CALL_RECORDS_MASTER].[Ringing Time] AS [Ringing Time], 
+    [CALL_RECORDS_MASTER].[Answer Time] AS [Answer Time], 
+    [CALL_RECORDS_MASTER].[Hangup Time] AS [Hangup Time], 
+    [CALL_RECORDS_MASTER].[Talking Time] AS [Talking Time], 
+    [CALL_RECORDS_MASTER].[Hold Time] AS [Hold Time], 
+    [CALL_RECORDS_MASTER].[Duration (Sec)] AS [Duration (Sec)], 
+    [CALL_RECORDS_MASTER].[ACW] AS [ACW], 
+    [CALL_RECORDS_MASTER].[Pre-Talk Time] AS [Pre-Talk Time], 
+    [CALL_RECORDS_MASTER].[Release Reason] AS [Release Reason], 
+    [CALL_RECORDS_MASTER].[Disposition] AS [Disposition], 
+    [CALL_RECORDS_MASTER].[Reason] AS [Reason]
+    FROM [dbo].[CALL_RECORDS_MASTER] AS [CALL_RECORDS_MASTER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CALL_RECORDS_STAGING" EntityType="Self.CALL_RECORDS_STAGING" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CALL_RECORDS_STAGING].[Dialed #] AS [Dialed #], 
+    [CALL_RECORDS_STAGING].[From Device] AS [From Device], 
+    [CALL_RECORDS_STAGING].[Orig Call-ID] AS [Orig Call-ID], 
+    [CALL_RECORDS_STAGING].[From User] AS [From User], 
+    [CALL_RECORDS_STAGING].[To Device] AS [To Device], 
+    [CALL_RECORDS_STAGING].[To User] AS [To User], 
+    [CALL_RECORDS_STAGING].[Call Time] AS [Call Time], 
+    [CALL_RECORDS_STAGING].[Ringing Time] AS [Ringing Time], 
+    [CALL_RECORDS_STAGING].[Answer Time] AS [Answer Time], 
+    [CALL_RECORDS_STAGING].[Hangup Time] AS [Hangup Time], 
+    [CALL_RECORDS_STAGING].[Talking Time] AS [Talking Time], 
+    [CALL_RECORDS_STAGING].[Hold Time] AS [Hold Time], 
+    [CALL_RECORDS_STAGING].[Duration (Sec)] AS [Duration (Sec)], 
+    [CALL_RECORDS_STAGING].[ACW] AS [ACW], 
+    [CALL_RECORDS_STAGING].[Pre-Talk Time] AS [Pre-Talk Time], 
+    [CALL_RECORDS_STAGING].[Release Reason] AS [Release Reason], 
+    [CALL_RECORDS_STAGING].[Disposition] AS [Disposition], 
+    [CALL_RECORDS_STAGING].[Reason] AS [Reason]
+    FROM [dbo].[CALL_RECORDS_STAGING] AS [CALL_RECORDS_STAGING]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

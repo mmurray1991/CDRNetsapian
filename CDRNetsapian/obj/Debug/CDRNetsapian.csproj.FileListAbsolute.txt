@@ -31,3 +31,7 @@ C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
 >>>>>>> a1a664799bc3ba028fb977c720ae63f053ba5da7
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.dll
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.xml
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.xml

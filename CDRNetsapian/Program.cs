@@ -18,6 +18,10 @@ namespace CDRNetsapian
         
         static void Main(string[] args)
         {
+            string accessToken = requestAccessToken();
+            JArray cdr = getCDR(accessToken);
+            var testing = cdr[0]["term_callid"];
+            Console.Write(cdr);
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = 
                 "Data Source=TIPS-6Z6GYN1;"+
@@ -27,13 +31,7 @@ namespace CDRNetsapian
             conn.Open();
             CallReportingEntities cr = new CallReportingEntities();
             CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
-            string accessToken = requestAccessToken();
-            JArray cdr = getCDR(accessToken);
-            var testing = cdr[0]["term_callid"];
-            
-                // using the code here...
-            
-            Console.Write(cdr);
+
 
         }
         public static string requestAccessToken()
@@ -58,6 +56,7 @@ namespace CDRNetsapian
             var request = new RestRequest("", Method.POST);
             request.AddHeader("Authorization", "Bearer " + act);
             request.AddParameter("domain", "doubleradius.com");
+            request.AddParameter("type", "OutBound");
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
