@@ -1,31 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CallReportingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="PROCESSING_STATUS">
-    <Key>
-      <PropertyRef Name="START_DATE" />
-    </Key>
-    <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FILE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="STATUS" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="END_DATE" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
+<Schema Namespace="CallReportingModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="CALL_RECORDS_MASTER">
     <Key>
+      <PropertyRef Name="Dialed__" />
       <PropertyRef Name="From_Device" />
       <PropertyRef Name="Orig_Call_ID" />
+      <PropertyRef Name="From_User" />
       <PropertyRef Name="To_Device" />
+      <PropertyRef Name="To_User" />
       <PropertyRef Name="Call_Time" />
+      <PropertyRef Name="Ringing_Time" />
+      <PropertyRef Name="Answer_Time" />
       <PropertyRef Name="Hangup_Time" />
+      <PropertyRef Name="Talking_Time" />
+      <PropertyRef Name="Hold_Time" />
+      <PropertyRef Name="Duration__Sec_" />
+      <PropertyRef Name="ACW" />
+      <PropertyRef Name="Pre_Talk_Time" />
       <PropertyRef Name="Release_Reason" />
     </Key>
     <Property Name="Dialed__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -46,6 +37,25 @@
     <Property Name="Release_Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PROCESSING_STATUS">
+    <Key>
+      <PropertyRef Name="START_DATE" />
+    </Key>
+    <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FILE_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STATUS" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="END_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="CALL_RECORDS_STAGING">
     <Key>
@@ -75,10 +85,10 @@
     <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="CallReportingEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CallReportingEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" />
     <EntitySet Name="PROCESSING_STATUS" EntityType="Self.PROCESSING_STATUS" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" />
     <EntitySet Name="CALL_RECORDS_STAGING" EntityType="Self.CALL_RECORDS_STAGING" />
   </EntityContainer>
 </Schema>

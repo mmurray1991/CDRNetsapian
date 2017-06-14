@@ -4,33 +4,41 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CallReportingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CallReporting.dbo.CALL_RECORDS_MASTER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      <Schema Namespace="CallReportingModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CALL_RECORDS_MASTER">
           <Key>
+            <PropertyRef Name="Dialed #" />
             <PropertyRef Name="From Device" />
             <PropertyRef Name="Orig Call-ID" />
+            <PropertyRef Name="From User" />
             <PropertyRef Name="To Device" />
+            <PropertyRef Name="To User" />
             <PropertyRef Name="Call Time" />
+            <PropertyRef Name="Ringing Time" />
+            <PropertyRef Name="Answer Time" />
             <PropertyRef Name="Hangup Time" />
+            <PropertyRef Name="Talking Time" />
+            <PropertyRef Name="Hold Time" />
+            <PropertyRef Name="Duration (Sec)" />
+            <PropertyRef Name="ACW" />
+            <PropertyRef Name="Pre-Talk Time" />
             <PropertyRef Name="Release Reason" />
           </Key>
-          <Property Name="Dialed #" Type="varchar" MaxLength="50" />
+          <Property Name="Dialed #" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="From Device" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Orig Call-ID" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="From User" Type="varchar" MaxLength="100" />
+          <Property Name="From User" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="To Device" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="To User" Type="varchar" MaxLength="100" />
+          <Property Name="To User" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Call Time" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="Ringing Time" Type="varchar" MaxLength="25" />
-          <Property Name="Answer Time" Type="varchar" MaxLength="25" />
+          <Property Name="Ringing Time" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Answer Time" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Hangup Time" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="Talking Time" Type="int" />
-          <Property Name="Hold Time" Type="int" />
-          <Property Name="Duration (Sec)" Type="int" />
-          <Property Name="ACW" Type="int" />
-          <Property Name="Pre-Talk Time" Type="varchar" MaxLength="25" />
+          <Property Name="Talking Time" Type="int" Nullable="false" />
+          <Property Name="Hold Time" Type="int" Nullable="false" />
+          <Property Name="Duration (Sec)" Type="int" Nullable="false" />
+          <Property Name="ACW" Type="int" Nullable="false" />
+          <Property Name="Pre-Talk Time" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="Release Reason" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Disposition" Type="varchar" MaxLength="50" />
           <Property Name="Reason" Type="varchar" MaxLength="50" />
@@ -112,31 +120,10 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
           <Property Name="Disposition" Type="varchar" MaxLength="50" />
           <Property Name="Reason" Type="varchar" MaxLength="50" />
         </EntityType>-->
-        <EntityContainer Name="CallReportingModelStoreContainer">
+        <EntityContainer Name="CallReportingModel1StoreContainer">
+          <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PROCESSING_STATUS" EntityType="Self.PROCESSING_STATUS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [CALL_RECORDS_MASTER].[Dialed #] AS [Dialed #], 
-    [CALL_RECORDS_MASTER].[From Device] AS [From Device], 
-    [CALL_RECORDS_MASTER].[Orig Call-ID] AS [Orig Call-ID], 
-    [CALL_RECORDS_MASTER].[From User] AS [From User], 
-    [CALL_RECORDS_MASTER].[To Device] AS [To Device], 
-    [CALL_RECORDS_MASTER].[To User] AS [To User], 
-    [CALL_RECORDS_MASTER].[Call Time] AS [Call Time], 
-    [CALL_RECORDS_MASTER].[Ringing Time] AS [Ringing Time], 
-    [CALL_RECORDS_MASTER].[Answer Time] AS [Answer Time], 
-    [CALL_RECORDS_MASTER].[Hangup Time] AS [Hangup Time], 
-    [CALL_RECORDS_MASTER].[Talking Time] AS [Talking Time], 
-    [CALL_RECORDS_MASTER].[Hold Time] AS [Hold Time], 
-    [CALL_RECORDS_MASTER].[Duration (Sec)] AS [Duration (Sec)], 
-    [CALL_RECORDS_MASTER].[ACW] AS [ACW], 
-    [CALL_RECORDS_MASTER].[Pre-Talk Time] AS [Pre-Talk Time], 
-    [CALL_RECORDS_MASTER].[Release Reason] AS [Release Reason], 
-    [CALL_RECORDS_MASTER].[Disposition] AS [Disposition], 
-    [CALL_RECORDS_MASTER].[Reason] AS [Reason]
-    FROM [dbo].[CALL_RECORDS_MASTER] AS [CALL_RECORDS_MASTER]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="CALL_RECORDS_STAGING" EntityType="Self.CALL_RECORDS_STAGING" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [CALL_RECORDS_STAGING].[Dialed #] AS [Dialed #], 
@@ -164,7 +151,45 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CallReportingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CallReportingModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CALL_RECORDS_MASTER">
+          <Key>
+            <PropertyRef Name="Dialed__" />
+            <PropertyRef Name="From_Device" />
+            <PropertyRef Name="Orig_Call_ID" />
+            <PropertyRef Name="From_User" />
+            <PropertyRef Name="To_Device" />
+            <PropertyRef Name="To_User" />
+            <PropertyRef Name="Call_Time" />
+            <PropertyRef Name="Ringing_Time" />
+            <PropertyRef Name="Answer_Time" />
+            <PropertyRef Name="Hangup_Time" />
+            <PropertyRef Name="Talking_Time" />
+            <PropertyRef Name="Hold_Time" />
+            <PropertyRef Name="Duration__Sec_" />
+            <PropertyRef Name="ACW" />
+            <PropertyRef Name="Pre_Talk_Time" />
+            <PropertyRef Name="Release_Reason" />
+          </Key>
+          <Property Name="Dialed__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="From_Device" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Orig_Call_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="From_User" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="To_Device" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="To_User" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Call_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ringing_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Answer_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Hangup_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Talking_Time" Type="Int32" Nullable="false" />
+          <Property Name="Hold_Time" Type="Int32" Nullable="false" />
+          <Property Name="Duration__Sec_" Type="Int32" Nullable="false" />
+          <Property Name="ACW" Type="Int32" Nullable="false" />
+          <Property Name="Pre_Talk_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Release_Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="PROCESSING_STATUS">
           <Key>
             <PropertyRef Name="START_DATE" />
@@ -183,34 +208,6 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="CALL_RECORDS_MASTER">
-          <Key>
-            <PropertyRef Name="From_Device" />
-            <PropertyRef Name="Orig_Call_ID" />
-            <PropertyRef Name="To_Device" />
-            <PropertyRef Name="Call_Time" />
-            <PropertyRef Name="Hangup_Time" />
-            <PropertyRef Name="Release_Reason" />
-          </Key>
-          <Property Name="Dialed__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="From_Device" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Orig_Call_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="From_User" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="To_Device" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="To_User" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Call_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Ringing_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="Answer_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="Hangup_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Talking_Time" Type="Int32" />
-          <Property Name="Hold_Time" Type="Int32" />
-          <Property Name="Duration__Sec_" Type="Int32" />
-          <Property Name="ACW" Type="Int32" />
-          <Property Name="Pre_Talk_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="Release_Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CALL_RECORDS_STAGING">
           <Key>
@@ -240,10 +237,10 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
           <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="CallReportingEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CallReportingEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" />
           <EntitySet Name="PROCESSING_STATUS" EntityType="Self.PROCESSING_STATUS" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" />
           <EntitySet Name="CALL_RECORDS_STAGING" EntityType="Self.CALL_RECORDS_STAGING" />
         </EntityContainer>
       </Schema>
@@ -251,30 +248,9 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CallReportingModelStoreContainer" CdmEntityContainer="CallReportingEntities">
-          <EntitySetMapping Name="PROCESSING_STATUS">
-            <EntityTypeMapping TypeName="CallReportingModel.PROCESSING_STATUS">
-              <MappingFragment StoreEntitySet="PROCESSING_STATUS">
-                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
-                <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="CallReportingModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="CallReportingModel1StoreContainer" CdmEntityContainer="CallReportingEntities1">
           <EntitySetMapping Name="CALL_RECORDS_MASTER">
-            <EntityTypeMapping TypeName="CallReportingModel.CALL_RECORDS_MASTER">
+            <EntityTypeMapping TypeName="CallReportingModel1.CALL_RECORDS_MASTER">
               <MappingFragment StoreEntitySet="CALL_RECORDS_MASTER">
                 <ScalarProperty Name="Dialed__" ColumnName="Dialed #" />
                 <ScalarProperty Name="From_Device" ColumnName="From Device" />
@@ -297,8 +273,29 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PROCESSING_STATUS">
+            <EntityTypeMapping TypeName="CallReportingModel1.PROCESSING_STATUS">
+              <MappingFragment StoreEntitySet="PROCESSING_STATUS">
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="FILE_NAME" ColumnName="FILE_NAME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CallReportingModel1.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CALL_RECORDS_STAGING">
-            <EntityTypeMapping TypeName="CallReportingModel.CALL_RECORDS_STAGING">
+            <EntityTypeMapping TypeName="CallReportingModel1.CALL_RECORDS_STAGING">
               <MappingFragment StoreEntitySet="CALL_RECORDS_STAGING">
                 <ScalarProperty Name="Dialed__" ColumnName="Dialed #" />
                 <ScalarProperty Name="From_Device" ColumnName="From Device" />

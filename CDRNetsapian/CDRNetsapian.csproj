@@ -62,57 +62,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallReport.Context.cs">
+    <Compile Include="CallReporting.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CallReport.Context.tt</DependentUpon>
+      <DependentUpon>CallReporting.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="CallReport.cs">
+    <Compile Include="CallReporting.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CallReport.tt</DependentUpon>
+      <DependentUpon>CallReporting.tt</DependentUpon>
     </Compile>
-    <Compile Include="CallReport.Designer.cs">
+    <Compile Include="CallReporting.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CallReport.edmx</DependentUpon>
+      <DependentUpon>CallReporting.edmx</DependentUpon>
     </Compile>
     <Compile Include="CALL_RECORDS_MASTER.cs">
-      <DependentUpon>CallReport.tt</DependentUpon>
+      <DependentUpon>CallReporting.tt</DependentUpon>
     </Compile>
     <Compile Include="CALL_RECORDS_STAGING.cs">
-      <DependentUpon>CallReport.tt</DependentUpon>
+      <DependentUpon>CallReporting.tt</DependentUpon>
     </Compile>
     <Compile Include="PROCESSING_STATUS.cs">
-      <DependentUpon>CallReport.tt</DependentUpon>
+      <DependentUpon>CallReporting.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>CallReport.tt</DependentUpon>
+      <DependentUpon>CallReporting.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="CallReport.edmx">
+    <EntityDeploy Include="CallReporting.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CallReport.Designer.cs</LastGenOutput>
+      <LastGenOutput>CallReporting.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="CallReport.edmx.diagram">
-      <DependentUpon>CallReport.edmx</DependentUpon>
+    <None Include="CallReporting.edmx.diagram">
+      <DependentUpon>CallReporting.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CallReport.Context.tt">
+    <Content Include="CallReporting.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CallReport.edmx</DependentUpon>
-      <LastGenOutput>CallReport.Context.cs</LastGenOutput>
+      <DependentUpon>CallReporting.edmx</DependentUpon>
+      <LastGenOutput>CallReporting.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="CallReport.tt">
+    <Content Include="CallReporting.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CallReport.edmx</DependentUpon>
-      <LastGenOutput>CallReport.cs</LastGenOutput>
+      <DependentUpon>CallReporting.edmx</DependentUpon>
+      <LastGenOutput>CallReporting.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

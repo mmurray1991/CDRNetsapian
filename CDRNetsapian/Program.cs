@@ -16,7 +16,7 @@ namespace CDRNetsapian
     class Program
     {
         //private static 
-        private static CallReportingEntities cr = new CallReportingEntities();
+        private static CallReportingEntities1 cr = new CallReportingEntities1();
         static void Main(string[] args)
         {
             string accessToken = requestAccessToken();
@@ -77,10 +77,10 @@ namespace CDRNetsapian
         public static void AddToDB(JArray cdrData)
         {
             CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
+            List<CALL_RECORDS_MASTER> records = new List<CALL_RECORDS_MASTER>();
             for (int x = 0; x< cdrData.Count; x++)
             {
                 
-                crm.Dialed__ = "123";
                 crm.Dialed__ = cdrData[x]["orig_to_user"].ToString();
                 crm.From_Device = cdrData[x]["orig_from_uri"].ToString();
                 crm.Orig_Call_ID = cdrData[x]["orig_callid"].ToString();
@@ -113,10 +113,25 @@ namespace CDRNetsapian
                 crm.Disposition = cdrData[x]["disposition"].ToString();
                 crm.Reason = cdrData[x]["reason"].ToString();
                 Console.WriteLine(x);
-                cr.CALL_RECORDS_MASTER.Add(crm);
+                records.Add(crm);
+
+
+
                 
             }
+
+            CallReportingEntities1 c1 = new CallReportingEntities1();
+            foreach (CALL_RECORDS_MASTER t1 in records)
+            {
+                c1.CALL_RECORDS_MASTER.Add(t1);
+            }
+            c1.SaveChanges();
+           /* cr.CALL_RECORDS_MASTER.Add(records[0]);
+            
             cr.SaveChanges();
+            cr.CALL_RECORDS_MASTER.Remove(records[0]);
+            cr.CALL_RECORDS_MASTER.Add(records[1]);
+            cr.SaveChanges();*/
         }
 
         public class CDRList

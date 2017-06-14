@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CallReportingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="CallReportingModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CALL_RECORDS_MASTER">
     <Key>
       <PropertyRef Name="Dialed #" />
@@ -115,7 +115,7 @@ warning 6013: The table/view 'CallReporting.dbo.test' does not have a primary ke
           <Property Name="Disposition" Type="varchar" MaxLength="50" />
           <Property Name="Reason" Type="varchar" MaxLength="50" />
         </EntityType>-->
-  <EntityContainer Name="CallReportingModelStoreContainer">
+  <EntityContainer Name="CallReportingModel1StoreContainer">
     <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PROCESSING_STATUS" EntityType="Self.PROCESSING_STATUS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />

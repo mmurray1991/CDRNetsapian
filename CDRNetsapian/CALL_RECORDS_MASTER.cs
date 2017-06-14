@@ -24,10 +24,10 @@ namespace CDRNetsapian
         public string Ringing_Time { get; set; }
         public string Answer_Time { get; set; }
         public string Hangup_Time { get; set; }
-        public Nullable<int> Talking_Time { get; set; }
-        public Nullable<int> Hold_Time { get; set; }
-        public Nullable<int> Duration__Sec_ { get; set; }
-        public Nullable<int> ACW { get; set; }
+        public int Talking_Time { get; set; }
+        public int Hold_Time { get; set; }
+        public int Duration__Sec_ { get; set; }
+        public int ACW { get; set; }
         public string Pre_Talk_Time { get; set; }
         public string Release_Reason { get; set; }
         public string Disposition { get; set; }
