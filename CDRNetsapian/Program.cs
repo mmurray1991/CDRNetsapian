@@ -16,7 +16,6 @@ namespace CDRNetsapian
     class Program
     {
         //private static 
-        private static CallReportingEntities1 cr = new CallReportingEntities1();
         static void Main(string[] args)
         {
             string accessToken = requestAccessToken();
@@ -76,8 +75,9 @@ namespace CDRNetsapian
 
         public static void AddToDB(JArray cdrData)
         {
+            CallReportingEntities2 cr = new CallReportingEntities2();
             CALL_RECORDS_MASTER crm = new CALL_RECORDS_MASTER();
-            List<CALL_RECORDS_MASTER> records = new List<CALL_RECORDS_MASTER>();
+            var records = new List<CALL_RECORDS_MASTER>();
             for (int x = 0; x< cdrData.Count; x++)
             {
                 
@@ -115,18 +115,31 @@ namespace CDRNetsapian
                 Console.WriteLine(x);
                 records.Add(crm);
 
-
-
                 
             }
-
-            CallReportingEntities1 c1 = new CallReportingEntities1();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString =
+                "Data Source = tips-6z6gyn1;" +
+                "Initial Catalog = CallReporting;" +
+                "User id = Paul;" +
+                "Password=tips;";
+            SqlBulkCopy bulkCopy = new SqlBulkCopy(conn);
+            bulkCopy.DestinationTableName = "CALL_RECORDS_MASTER";
+            conn.Open();
+            
+            EntityDataReader<CALL_RECORDS_MASTER> edr = new EntityDataReader<CALL_RECORDS_MASTER>(records);
+            bulkCopy.WriteToServer(edr);
+            conn.Close();
+            //cr.CALL_RECORDS_MASTER.AddRange(records);
+            //cr.CALL_RECORDS_MASTER.AddRange(records);
+            //cr.SaveChanges();
+            /*CallReportingEntities1 c1 = new CallReportingEntities1();
             foreach (CALL_RECORDS_MASTER t1 in records)
             {
                 c1.CALL_RECORDS_MASTER.Add(t1);
             }
             c1.SaveChanges();
-           /* cr.CALL_RECORDS_MASTER.Add(records[0]);
+            cr.CALL_RECORDS_MASTER.Add(records[0]);
             
             cr.SaveChanges();
             cr.CALL_RECORDS_MASTER.Remove(records[0]);

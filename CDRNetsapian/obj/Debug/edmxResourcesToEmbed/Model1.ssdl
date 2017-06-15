@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallReportingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CALL_RECORDS_MASTER">
+    <Key>
+      <PropertyRef Name="Dialed #" />
+      <PropertyRef Name="From Device" />
+      <PropertyRef Name="Orig Call-ID" />
+      <PropertyRef Name="From User" />
+      <PropertyRef Name="To Device" />
+      <PropertyRef Name="To User" />
+      <PropertyRef Name="Call Time" />
+      <PropertyRef Name="Ringing Time" />
+      <PropertyRef Name="Answer Time" />
+      <PropertyRef Name="Hangup Time" />
+      <PropertyRef Name="Talking Time" />
+      <PropertyRef Name="Hold Time" />
+      <PropertyRef Name="Duration (Sec)" />
+      <PropertyRef Name="ACW" />
+      <PropertyRef Name="Pre-Talk Time" />
+      <PropertyRef Name="Release Reason" />
+    </Key>
+    <Property Name="Dialed #" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="From Device" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Orig Call-ID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="From User" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="To Device" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="To User" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Call Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Ringing Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Answer Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Hangup Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Talking Time" Type="int" Nullable="false" />
+    <Property Name="Hold Time" Type="int" Nullable="false" />
+    <Property Name="Duration (Sec)" Type="int" Nullable="false" />
+    <Property Name="ACW" Type="int" Nullable="false" />
+    <Property Name="Pre-Talk Time" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Release Reason" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Disposition" Type="varchar" MaxLength="50" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="CallReportingModelStoreContainer">
+    <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

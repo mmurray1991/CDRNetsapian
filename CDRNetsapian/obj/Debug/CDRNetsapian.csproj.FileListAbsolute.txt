@@ -12,3 +12,4 @@ C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian
 C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
 C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
 C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
+C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Z.EntityFramework.Extensions.dll

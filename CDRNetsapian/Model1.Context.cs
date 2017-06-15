@@ -13,10 +13,10 @@ namespace CDRNetsapian
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CallReportingEntities1 : DbContext
+    public partial class CallReportingEntities2 : DbContext
     {
-        public CallReportingEntities1()
-            : base("name=CallReportingEntities1")
+        public CallReportingEntities2()
+            : base("name=CallReportingEntities2")
         {
         }
     
@@ -26,8 +26,5 @@ namespace CDRNetsapian
         }
     
         public virtual DbSet<CALL_RECORDS_MASTER> CALL_RECORDS_MASTER { get; set; }
-        public virtual DbSet<PROCESSING_STATUS> PROCESSING_STATUS { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<CALL_RECORDS_STAGING> CALL_RECORDS_STAGING { get; set; }
     }
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CallReportingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CALL_RECORDS_MASTER">
+    <Key>
+      <PropertyRef Name="Dialed__" />
+      <PropertyRef Name="From_Device" />
+      <PropertyRef Name="Orig_Call_ID" />
+      <PropertyRef Name="From_User" />
+      <PropertyRef Name="To_Device" />
+      <PropertyRef Name="To_User" />
+      <PropertyRef Name="Call_Time" />
+      <PropertyRef Name="Ringing_Time" />
+      <PropertyRef Name="Answer_Time" />
+      <PropertyRef Name="Hangup_Time" />
+      <PropertyRef Name="Talking_Time" />
+      <PropertyRef Name="Hold_Time" />
+      <PropertyRef Name="Duration__Sec_" />
+      <PropertyRef Name="ACW" />
+      <PropertyRef Name="Pre_Talk_Time" />
+      <PropertyRef Name="Release_Reason" />
+    </Key>
+    <Property Name="Dialed__" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="From_Device" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Orig_Call_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="From_User" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="To_Device" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="To_User" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Call_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Ringing_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Answer_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Hangup_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Talking_Time" Type="Int32" Nullable="false" />
+    <Property Name="Hold_Time" Type="Int32" Nullable="false" />
+    <Property Name="Duration__Sec_" Type="Int32" Nullable="false" />
+    <Property Name="ACW" Type="Int32" Nullable="false" />
+    <Property Name="Pre_Talk_Time" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Release_Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Disposition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CallReportingEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CALL_RECORDS_MASTER" EntityType="Self.CALL_RECORDS_MASTER" />
+  </EntityContainer>
+</Schema>
