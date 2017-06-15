@@ -17,7 +17,7 @@ namespace CDRNetsapian
     {
         //private static 
         private static CallReportingEntities cr = new CallReportingEntities();
-        private static SqlConnection openCon = new SqlConnection("Data Source=TIPS-6Z6GYN1;" +
+        private static SqlConnection openCon = new SqlConnection("Data Source=TIPSPROGMR2;" +
             "Initial Catalog=CallReporting;" +
             "Integrated Security=SSPI;");
 
@@ -186,8 +186,15 @@ namespace CDRNetsapian
                     //    querySaveRecord.ExecuteNonQuery();
                      
             }
+            //string tmpTable = "CREATE TABLE temp([Dialed #] [varchar](50) NOT NULL,[From Device][varchar](100) NOT NULL,[Orig Call - ID][varchar](100) NOT NULL,[From User][varchar](100) NOT NULL,[To Device][varchar](100) NOT NULL,[To User][varchar](100) NOT NULL,[Call Time][varchar](25) NOT NULL,[Ringing Time][varchar](25) NOT NULL,[Answer Time][varchar](25) NOT NULL,[Hangup Time][varchar](25) NOT NULL,[Talking Time][int] NOT NULL,[Hold Time][int] NOT NULL,[Duration(Sec)][int] NOT NULL,[ACW][int] NOT NULL,[Pre - Talk Time][varchar](25) NOT NULL,[Release Reason][varchar](100) NOT NULL,[Disposition][varchar](50) NULL,[Reason][varchar](50) NULL,)";
+            //SqlCommand cmd = new SqlCommand(tmpTable, openCon);
+            //cmd.ExecuteNonQuery();
+            using(SqlBulkCopy bulk = new SqlBulkCopy(openCon))
+            {
+                bulk.DestinationTableName = "CallReporting.dbo.CALL_RECORDS_MASTER";
+                bulk.WriteToServer(table);
+            }
 
-            
             //cr.SaveChanges();
         }
 
