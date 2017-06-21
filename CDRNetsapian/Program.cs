@@ -17,9 +17,9 @@ namespace CDRNetsapian
     {
         //private static 
         private static CallReportingEntities cr = new CallReportingEntities();
-        private static SqlConnection openCon = new SqlConnection("Data Source=TIPSPROGMR2;" +
-            "Initial Catalog=CallReporting;" +
-            "Integrated Security=SSPI;");
+        private static SqlConnection openCon = new SqlConnection("Data Source=10.6.5.155;" +
+            "User id=asteed;" +
+            "Password=Pdntspa12;");
 
         static void Main(string[] args)
         {
@@ -42,7 +42,7 @@ namespace CDRNetsapian
             request.AddParameter("client_id", "apitest");
             request.AddParameter("client_secret", "11972ff80886ecfbaa18355eff3251b6");
             request.AddParameter("username", "brianhales@trueipsolutions.com");
-            request.AddParameter("password", "10658009");
+            request.AddParameter("password", "L2C93vTy");
             request.RequestFormat = DataFormat.Json;
             IRestResponse response = client.Execute(request);
             var content = response.Content;
@@ -103,11 +103,18 @@ namespace CDRNetsapian
             table.Columns.Add(new DataColumn("Reason", typeof(string)));
 
             for (int x = 0; x < cdrData.Count; x++)
+            {
+                crm.Dialed__ = cdrData[x]["orig_to_user"].ToString();
+                crm.From_Device = cdrData[x]["orig_from_uri"].ToString();
+                crm.Orig_Call_ID = cdrData[x]["orig_callid"].ToString();
+                if (cdrData[x]["orig_sub"].ToString() == "")
                 {
-                    crm.Dialed__ = cdrData[x]["orig_to_user"].ToString();
-                    crm.From_Device = cdrData[x]["orig_from_uri"].ToString();
-                    crm.Orig_Call_ID = cdrData[x]["orig_callid"].ToString();
-                    crm.From_User = cdrData[x]["orig_domain"].ToString();
+                    crm.From_User = "";
+                }
+                else
+                {
+                    crm.From_User = cdrData[x]["orig_sub"].ToString() + "@" + cdrData[x]["orig_domain"].ToString();
+                }
                     crm.To_Device = cdrData[x]["term_to_uri"].ToString();
                     crm.To_User = cdrData[x]["domain"].ToString();
                     crm.Call_Time = cdrData[x]["batch_tim_beg"].ToString();
@@ -191,7 +198,7 @@ namespace CDRNetsapian
             //cmd.ExecuteNonQuery();
             using(SqlBulkCopy bulk = new SqlBulkCopy(openCon))
             {
-                bulk.DestinationTableName = "CallReporting.dbo.CALL_RECORDS_MASTER";
+                bulk.DestinationTableName = "CallReporting.dbo.CALL_RECORDS_STAGING";
                 bulk.WriteToServer(table);
             }
 

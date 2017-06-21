@@ -1,56 +1,14 @@
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
-c:\users\tips\documents\visual studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
-<<<<<<< HEAD
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
-=======
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
-C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
->>>>>>> a1a664799bc3ba028fb977c720ae63f053ba5da7
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.dll
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.xml
-C:\Users\pmurray\Documents\Visual Studio 2015\Projects\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.dll
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.xml
 C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.xml
->>>>>>> d3fb97924f2b32101401204d77c2a1304c223568
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe.config
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.exe
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\CDRNetsapian.pdb
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.dll
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.dll
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.dll
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.xml
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
-C:\Users\tips\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\bin\Debug\RestSharp.xml
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.exe
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.pdb
+C:\Users\mmurray\Documents\GitHub\CDRNetsapian\CDRNetsapian\obj\Debug\CDRNetsapian.csprojResolveAssemblyReference.cache
