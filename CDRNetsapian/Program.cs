@@ -20,6 +20,7 @@ namespace CDRNetsapian
         //private static 
         private static CallReportingEntities cr = new CallReportingEntities();
         private static SqlConnection openCon = new SqlConnection("Data Source=tipsdb.database.windows.net;" +
+            "Initial Catalog=LOA;" +
             "User id=tipsadmin;" +
             "Password=^arBM)qy;");
 
@@ -171,30 +172,30 @@ namespace CDRNetsapian
                 //crmList.Add(crm);
 
 
-                //string saveRecord = "Insert into CallReporting.dbo.CALL_RECORDS_MASTER ([Dialed #], [From Device], [Orig Call-ID], [From User], [To Device], [To User], [Call Time], [Ringing Time], [Answer Time], [Hangup Time], [Talking Time], [Hold Time], [Duration (Sec)], ACW, [Pre-Talk Time], [Release Reason], Disposition, Reason) VALUES (@dialed, @fromDevice, @origCallId, @fromUser, @toDevice, @toUser, @callTime, @ringingTime, @answerTime, @hangupTime, @talkingTIme, @holdTime, @duration, @acw, @preTalkTime, @releaseReason, @disposition, @reason)";
-                //SqlCommand querySaveRecord = new SqlCommand(saveRecord, openCon);
+            //    string saveRecord = "Insert into dbo.CALL_RECORDS_MASTER ([Dialed #], [From Device], [Orig Call-ID], [From User], [To Device], [To User], [Call Time], [Ringing Time], [Answer Time], [Hangup Time], [Talking Time], [Hold Time], [Duration (Sec)], ACW, [Pre-Talk Time], [Release Reason], Disposition, Reason) VALUES (@dialed, @fromDevice, @origCallId, @fromUser, @toDevice, @toUser, @callTime, @ringingTime, @answerTime, @hangupTime, @talkingTIme, @holdTime, @duration, @acw, @preTalkTime, @releaseReason, @disposition, @reason)";
+            //    SqlCommand querySaveRecord = new SqlCommand(saveRecord, openCon);
 
-                //querySaveRecord.CommandType = CommandType.Text;
-                //querySaveRecord.Parameters.AddWithValue("@dialed", crm.Dialed__);
-                //querySaveRecord.Parameters.AddWithValue("@fromDevice", crm.From_Device);
-                //querySaveRecord.Parameters.AddWithValue("@origCallId", crm.Orig_Call_ID);
-                //querySaveRecord.Parameters.AddWithValue("@fromUser", crm.From_User);
-                //querySaveRecord.Parameters.AddWithValue("@toDevice", crm.To_Device);
-                //querySaveRecord.Parameters.AddWithValue("@toUser", crm.To_User);
-                //querySaveRecord.Parameters.AddWithValue("@callTime", crm.Call_Time);
-                //querySaveRecord.Parameters.AddWithValue("@ringingTime", crm.Ringing_Time);
-                //querySaveRecord.Parameters.AddWithValue("@answerTime", crm.Answer_Time);
-                //querySaveRecord.Parameters.AddWithValue("@hangupTime", crm.Hangup_Time);
-                //querySaveRecord.Parameters.AddWithValue("@talkingTIme", crm.Talking_Time);
-                //querySaveRecord.Parameters.AddWithValue("@holdTime", crm.Hold_Time);
-                //querySaveRecord.Parameters.AddWithValue("@duration", crm.Duration__Sec_);
-                //querySaveRecord.Parameters.AddWithValue("@acw", crm.ACW);
-                //querySaveRecord.Parameters.AddWithValue("@preTalkTime", crm.Pre_Talk_Time);
-                //querySaveRecord.Parameters.AddWithValue("@releaseReason", crm.Release_Reason);
-                //querySaveRecord.Parameters.AddWithValue("@disposition", crm.Disposition);
-                //querySaveRecord.Parameters.AddWithValue("@reason", crm.Reason);
-                
-                //querySaveRecord.ExecuteNonQuery();
+            //    querySaveRecord.CommandType = CommandType.Text;
+            //    querySaveRecord.Parameters.AddWithValue("@dialed", crm.Dialed__);
+            //    querySaveRecord.Parameters.AddWithValue("@fromDevice", crm.From_Device);
+            //    querySaveRecord.Parameters.AddWithValue("@origCallId", crm.Orig_Call_ID);
+            //    querySaveRecord.Parameters.AddWithValue("@fromUser", crm.From_User);
+            //    querySaveRecord.Parameters.AddWithValue("@toDevice", crm.To_Device);
+            //    querySaveRecord.Parameters.AddWithValue("@toUser", crm.To_User);
+            //    querySaveRecord.Parameters.AddWithValue("@callTime", crm.Call_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@ringingTime", crm.Ringing_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@answerTime", crm.Answer_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@hangupTime", crm.Hangup_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@talkingTIme", crm.Talking_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@holdTime", crm.Hold_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@duration", crm.Duration__Sec_);
+            //    querySaveRecord.Parameters.AddWithValue("@acw", crm.ACW);
+            //    querySaveRecord.Parameters.AddWithValue("@preTalkTime", crm.Pre_Talk_Time);
+            //    querySaveRecord.Parameters.AddWithValue("@releaseReason", crm.Release_Reason);
+            //    querySaveRecord.Parameters.AddWithValue("@disposition", crm.Disposition);
+            //    querySaveRecord.Parameters.AddWithValue("@reason", crm.Reason);
+
+            //    querySaveRecord.ExecuteNonQuery();
 
             }
             //var bulk = new BulkWriter("EventLog", new Dictionary<string, string>
@@ -223,12 +224,12 @@ namespace CDRNetsapian
             //string tmpTable = "CREATE TABLE temp([Dialed #] [varchar](50) NOT NULL,[From Device][varchar](100) NOT NULL,[Orig Call - ID][varchar](100) NOT NULL,[From User][varchar](100) NOT NULL,[To Device][varchar](100) NOT NULL,[To User][varchar](100) NOT NULL,[Call Time][varchar](25) NOT NULL,[Ringing Time][varchar](25) NOT NULL,[Answer Time][varchar](25) NOT NULL,[Hangup Time][varchar](25) NOT NULL,[Talking Time][int] NOT NULL,[Hold Time][int] NOT NULL,[Duration(Sec)][int] NOT NULL,[ACW][int] NOT NULL,[Pre - Talk Time][varchar](25) NOT NULL,[Release Reason][varchar](100) NOT NULL,[Disposition][varchar](50) NULL,[Reason][varchar](50) NULL,)";
             //SqlCommand cmd = new SqlCommand(tmpTable, openCon);
             //cmd.ExecuteNonQuery();
-            //using (SqlBulkCopy bulk = new SqlBulkCopy(openCon))
-            //{
-            //    bulk.DestinationTableName = "CALL_RECORDS_STAGING";
-            //    //Console.Write(bulk.ColumnMappings.ToString()); ;
-            //    bulk.WriteToServer(table);
-            //}
+            using (SqlBulkCopy bulk = new SqlBulkCopy(openCon))
+            {
+                bulk.DestinationTableName = "CALL_RECORDS_STAGING";
+                //Console.Write(bulk.ColumnMappings.ToString()); ;
+                bulk.WriteToServer(table);
+            }
 
             //cr.SaveChanges();
         }
