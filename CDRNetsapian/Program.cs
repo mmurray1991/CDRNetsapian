@@ -17,9 +17,9 @@ namespace CDRNetsapian
     {
         //private static 
         private static CallReportingEntities cr = new CallReportingEntities();
-        private static SqlConnection openCon = new SqlConnection("Data Source=10.6.5.155;" +
-            "User id=asteed;" +
-            "Password=Pdntspa12;");
+        private static SqlConnection openCon = new SqlConnection("Data Source=tipsdb.database.windows.net;" +
+            "User id=tipsadmin;" +
+            "Password=^arBM)qy;");
 
         static void Main(string[] args)
         {
